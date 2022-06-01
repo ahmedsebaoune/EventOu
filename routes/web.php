@@ -14,3 +14,6 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', [HomeController::class,'show']);
+Route::middleware(['admin'])->group(function () {
+    Route::get('/admin', [HomeController::class,'show',]);
+});

@@ -22,6 +22,7 @@ class HandleInertiaRequests extends Middleware
      * @param  \Illuminate\Http\Request  $request
      * @return string|null
      */
+
     public function version(Request $request): ?string
     {
         return parent::version($request);
