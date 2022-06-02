@@ -1,5 +1,5 @@
 import AppLayout from "@/Layouts/AppLayout";
-import CreateTeamForm from "@/Pages/Teams/CreateTeamForm";
+import CreateTeamForm from "@/Pages/Admin/Teams/CreateTeamForm";
 
 const Create = () => {
     const header =

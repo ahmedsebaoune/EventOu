@@ -1,9 +1,9 @@
 import React from 'react';
 import AppLayout from "@/Layouts/AppLayout";
 import SectionBorder from "@/Jetstream/SectionBorder";
-import DeleteTeamForm from "@/Pages/Teams/DeleteTeamForm";
-import UpdateTeamNameForm from "@/Pages/Teams/UpdateTeamNameForm";
-import TeamMemberManager from "@/Pages/Teams/TeamMemberManager";
+import DeleteTeamForm from "@/Pages/Admin/Teams/DeleteTeamForm";
+import UpdateTeamNameForm from "@/Pages/Admin/Teams/UpdateTeamNameForm";
+import TeamMemberManager from "@/Pages/Admin/Teams/TeamMemberManager";
 
 const Show = ({team, availableRoles, permissions}) => {
     return (

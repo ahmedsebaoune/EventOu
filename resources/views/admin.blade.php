@@ -8,16 +8,15 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <link rel="shortcut icon" href="{{ asset('/favicon.png') }}">
 
         <!-- Scripts -->
         @routes
-        <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="{{ mix('js/admin.js') }}" defer></script>
         @inertiaHead
     </head>
     <body class="font-sans antialiased">
-        @inertia
+        <div id="admin" data-page="{{ json_encode($page) }}"></div>
         <div id="portals"/>
     </body>
 </html>

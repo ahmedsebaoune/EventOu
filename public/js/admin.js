@@ -1870,47 +1870,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./resources/js/app.js":
-/*!*****************************!*\
-  !*** ./resources/js/app.js ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var _inertiajs_progress__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/progress */ "./node_modules/@inertiajs/progress/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-
-
-
-
-
-(0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.createInertiaApp)({
-  resolve: function resolve(name) {
-    return __webpack_require__("./resources/js/Pages/App lazy recursive ^\\.\\/.*$")("./".concat(name));
-  },
-  setup: function setup(_ref) {
-    var el = _ref.el,
-        App = _ref.App,
-        props = _ref.props;
-    (0,react_dom__WEBPACK_IMPORTED_MODULE_1__.render)( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(App, _objectSpread({}, props)), el);
-  }
-});
-_inertiajs_progress__WEBPACK_IMPORTED_MODULE_2__.InertiaProgress.init({
-  color: '#4B5563'
-});
-
-/***/ }),
-
 /***/ "./resources/js/bootstrap.js":
 /*!***********************************!*\
   !*** ./resources/js/bootstrap.js ***!
@@ -4518,19 +4477,6 @@ function stubFalse() {
 }
 
 module.exports = isEqual;
-
-
-/***/ }),
-
-/***/ "./resources/css/app.css":
-/*!*******************************!*\
-  !*** ./resources/css/app.css ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
 
 
 /***/ }),
@@ -37720,76 +37666,140 @@ module.exports = function getSideChannel() {
 
 /***/ }),
 
-/***/ "./resources/js/Pages/App lazy recursive ^\\.\\/.*$":
-/*!****************************************************************!*\
-  !*** ./resources/js/Pages/App/ lazy ^\.\/.*$ namespace object ***!
-  \****************************************************************/
+/***/ "./resources/js/Pages/Admin lazy recursive ^\\.\\/.*$":
+/*!******************************************************************!*\
+  !*** ./resources/js/Pages/Admin/ lazy ^\.\/.*$ namespace object ***!
+  \******************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
-	"./Auth/ConfirmPassword": [
-		"./resources/js/Pages/App/Auth/ConfirmPassword.jsx",
-		"resources_js_Pages_App_Auth_ConfirmPassword_jsx"
+	"./Dashboard": [
+		"./resources/js/Pages/Admin/Dashboard.jsx",
+		"css/app",
+		"resources_js_Pages_Admin_Dashboard_jsx"
 	],
-	"./Auth/ConfirmPassword.jsx": [
-		"./resources/js/Pages/App/Auth/ConfirmPassword.jsx",
-		"resources_js_Pages_App_Auth_ConfirmPassword_jsx"
+	"./Dashboard.jsx": [
+		"./resources/js/Pages/Admin/Dashboard.jsx",
+		"css/app",
+		"resources_js_Pages_Admin_Dashboard_jsx"
 	],
-	"./Auth/ForgotPassword": [
-		"./resources/js/Pages/App/Auth/ForgotPassword.jsx",
-		"resources_js_Pages_App_Auth_ForgotPassword_jsx"
+	"./PrivacyPolicy": [
+		"./resources/js/Pages/Admin/PrivacyPolicy.jsx",
+		"resources_js_Pages_Admin_PrivacyPolicy_jsx"
 	],
-	"./Auth/ForgotPassword.jsx": [
-		"./resources/js/Pages/App/Auth/ForgotPassword.jsx",
-		"resources_js_Pages_App_Auth_ForgotPassword_jsx"
+	"./PrivacyPolicy.jsx": [
+		"./resources/js/Pages/Admin/PrivacyPolicy.jsx",
+		"resources_js_Pages_Admin_PrivacyPolicy_jsx"
 	],
-	"./Auth/Login": [
-		"./resources/js/Pages/App/Auth/Login.jsx",
-		"resources_js_Pages_App_Auth_Login_jsx"
+	"./Profile/DeleteUserForm": [
+		"./resources/js/Pages/Admin/Profile/DeleteUserForm.jsx",
+		"resources_js_Pages_Admin_Profile_DeleteUserForm_jsx"
 	],
-	"./Auth/Login.jsx": [
-		"./resources/js/Pages/App/Auth/Login.jsx",
-		"resources_js_Pages_App_Auth_Login_jsx"
+	"./Profile/DeleteUserForm.jsx": [
+		"./resources/js/Pages/Admin/Profile/DeleteUserForm.jsx",
+		"resources_js_Pages_Admin_Profile_DeleteUserForm_jsx"
 	],
-	"./Auth/Register": [
-		"./resources/js/Pages/App/Auth/Register.jsx",
-		"resources_js_Pages_App_Auth_Register_jsx"
+	"./Profile/LogoutOtherBrowserSessionsForm": [
+		"./resources/js/Pages/Admin/Profile/LogoutOtherBrowserSessionsForm.jsx",
+		"resources_js_Pages_Admin_Profile_LogoutOtherBrowserSessionsForm_jsx"
 	],
-	"./Auth/Register.jsx": [
-		"./resources/js/Pages/App/Auth/Register.jsx",
-		"resources_js_Pages_App_Auth_Register_jsx"
+	"./Profile/LogoutOtherBrowserSessionsForm.jsx": [
+		"./resources/js/Pages/Admin/Profile/LogoutOtherBrowserSessionsForm.jsx",
+		"resources_js_Pages_Admin_Profile_LogoutOtherBrowserSessionsForm_jsx"
 	],
-	"./Auth/ResetPassword": [
-		"./resources/js/Pages/App/Auth/ResetPassword.jsx",
-		"resources_js_Pages_App_Auth_ResetPassword_jsx"
+	"./Profile/Show": [
+		"./resources/js/Pages/Admin/Profile/Show.jsx",
+		"css/app",
+		"resources_js_Pages_Admin_Profile_Show_jsx"
 	],
-	"./Auth/ResetPassword.jsx": [
-		"./resources/js/Pages/App/Auth/ResetPassword.jsx",
-		"resources_js_Pages_App_Auth_ResetPassword_jsx"
+	"./Profile/Show.jsx": [
+		"./resources/js/Pages/Admin/Profile/Show.jsx",
+		"css/app",
+		"resources_js_Pages_Admin_Profile_Show_jsx"
 	],
-	"./Auth/TwoFactorChallenge": [
-		"./resources/js/Pages/App/Auth/TwoFactorChallenge.jsx",
-		"resources_js_Pages_App_Auth_TwoFactorChallenge_jsx"
+	"./Profile/TwoFactorAuthenticationForm": [
+		"./resources/js/Pages/Admin/Profile/TwoFactorAuthenticationForm.jsx",
+		"resources_js_Pages_Admin_Profile_TwoFactorAuthenticationForm_jsx"
 	],
-	"./Auth/TwoFactorChallenge.jsx": [
-		"./resources/js/Pages/App/Auth/TwoFactorChallenge.jsx",
-		"resources_js_Pages_App_Auth_TwoFactorChallenge_jsx"
+	"./Profile/TwoFactorAuthenticationForm.jsx": [
+		"./resources/js/Pages/Admin/Profile/TwoFactorAuthenticationForm.jsx",
+		"resources_js_Pages_Admin_Profile_TwoFactorAuthenticationForm_jsx"
 	],
-	"./Auth/VerifyEmail": [
-		"./resources/js/Pages/App/Auth/VerifyEmail.jsx",
-		"resources_js_Pages_App_Auth_VerifyEmail_jsx"
+	"./Profile/UpdatePasswordForm": [
+		"./resources/js/Pages/Admin/Profile/UpdatePasswordForm.jsx",
+		"resources_js_Pages_Admin_Profile_UpdatePasswordForm_jsx"
 	],
-	"./Auth/VerifyEmail.jsx": [
-		"./resources/js/Pages/App/Auth/VerifyEmail.jsx",
-		"resources_js_Pages_App_Auth_VerifyEmail_jsx"
+	"./Profile/UpdatePasswordForm.jsx": [
+		"./resources/js/Pages/Admin/Profile/UpdatePasswordForm.jsx",
+		"resources_js_Pages_Admin_Profile_UpdatePasswordForm_jsx"
 	],
-	"./Welcome": [
-		"./resources/js/Pages/App/Welcome.jsx",
-		"resources_js_Pages_App_Welcome_jsx"
+	"./Profile/UpdateProfileInformationForm": [
+		"./resources/js/Pages/Admin/Profile/UpdateProfileInformationForm.jsx",
+		"resources_js_Pages_Admin_Profile_UpdateProfileInformationForm_jsx"
 	],
-	"./Welcome.jsx": [
-		"./resources/js/Pages/App/Welcome.jsx",
-		"resources_js_Pages_App_Welcome_jsx"
+	"./Profile/UpdateProfileInformationForm.jsx": [
+		"./resources/js/Pages/Admin/Profile/UpdateProfileInformationForm.jsx",
+		"resources_js_Pages_Admin_Profile_UpdateProfileInformationForm_jsx"
+	],
+	"./Teams/Create": [
+		"./resources/js/Pages/Admin/Teams/Create.jsx",
+		"css/app",
+		"resources_js_Pages_Admin_Teams_Create_jsx"
+	],
+	"./Teams/Create.jsx": [
+		"./resources/js/Pages/Admin/Teams/Create.jsx",
+		"css/app",
+		"resources_js_Pages_Admin_Teams_Create_jsx"
+	],
+	"./Teams/CreateTeamForm": [
+		"./resources/js/Pages/Admin/Teams/CreateTeamForm.jsx",
+		"resources_js_Pages_Admin_Teams_CreateTeamForm_jsx"
+	],
+	"./Teams/CreateTeamForm.jsx": [
+		"./resources/js/Pages/Admin/Teams/CreateTeamForm.jsx",
+		"resources_js_Pages_Admin_Teams_CreateTeamForm_jsx"
+	],
+	"./Teams/DeleteTeamForm": [
+		"./resources/js/Pages/Admin/Teams/DeleteTeamForm.jsx",
+		"resources_js_Pages_Admin_Teams_DeleteTeamForm_jsx"
+	],
+	"./Teams/DeleteTeamForm.jsx": [
+		"./resources/js/Pages/Admin/Teams/DeleteTeamForm.jsx",
+		"resources_js_Pages_Admin_Teams_DeleteTeamForm_jsx"
+	],
+	"./Teams/Show": [
+		"./resources/js/Pages/Admin/Teams/Show.jsx",
+		"css/app",
+		"resources_js_Pages_Admin_Teams_Show_jsx"
+	],
+	"./Teams/Show.jsx": [
+		"./resources/js/Pages/Admin/Teams/Show.jsx",
+		"css/app",
+		"resources_js_Pages_Admin_Teams_Show_jsx"
+	],
+	"./Teams/TeamMemberManager": [
+		"./resources/js/Pages/Admin/Teams/TeamMemberManager.jsx",
+		"resources_js_Pages_Admin_Teams_TeamMemberManager_jsx"
+	],
+	"./Teams/TeamMemberManager.jsx": [
+		"./resources/js/Pages/Admin/Teams/TeamMemberManager.jsx",
+		"resources_js_Pages_Admin_Teams_TeamMemberManager_jsx"
+	],
+	"./Teams/UpdateTeamNameForm": [
+		"./resources/js/Pages/Admin/Teams/UpdateTeamNameForm.jsx",
+		"resources_js_Pages_Admin_Teams_UpdateTeamNameForm_jsx"
+	],
+	"./Teams/UpdateTeamNameForm.jsx": [
+		"./resources/js/Pages/Admin/Teams/UpdateTeamNameForm.jsx",
+		"resources_js_Pages_Admin_Teams_UpdateTeamNameForm_jsx"
+	],
+	"./TermsOfService": [
+		"./resources/js/Pages/Admin/TermsOfService.jsx",
+		"resources_js_Pages_Admin_TermsOfService_jsx"
+	],
+	"./TermsOfService.jsx": [
+		"./resources/js/Pages/Admin/TermsOfService.jsx",
+		"resources_js_Pages_Admin_TermsOfService_jsx"
 	]
 };
 function webpackAsyncContext(req) {
@@ -37802,12 +37812,12 @@ function webpackAsyncContext(req) {
 	}
 
 	var ids = map[req], id = ids[0];
-	return __webpack_require__.e(ids[1]).then(() => {
+	return Promise.all(ids.slice(1).map(__webpack_require__.e)).then(() => {
 		return __webpack_require__(id);
 	});
 }
 webpackAsyncContext.keys = () => (Object.keys(map));
-webpackAsyncContext.id = "./resources/js/Pages/App lazy recursive ^\\.\\/.*$";
+webpackAsyncContext.id = "./resources/js/Pages/Admin lazy recursive ^\\.\\/.*$";
 module.exports = webpackAsyncContext;
 
 /***/ }),
@@ -37855,34 +37865,15 @@ module.exports = webpackAsyncContext;
 /******/ 	__webpack_require__.m = __webpack_modules__;
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
-/******/ 		var deferred = [];
-/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
-/******/ 			if(chunkIds) {
-/******/ 				priority = priority || 0;
-/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
-/******/ 				deferred[i] = [chunkIds, fn, priority];
-/******/ 				return;
-/******/ 			}
-/******/ 			var notFulfilled = Infinity;
-/******/ 			for (var i = 0; i < deferred.length; i++) {
-/******/ 				var [chunkIds, fn, priority] = deferred[i];
-/******/ 				var fulfilled = true;
-/******/ 				for (var j = 0; j < chunkIds.length; j++) {
-/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
-/******/ 						chunkIds.splice(j--, 1);
-/******/ 					} else {
-/******/ 						fulfilled = false;
-/******/ 						if(priority < notFulfilled) notFulfilled = priority;
-/******/ 					}
-/******/ 				}
-/******/ 				if(fulfilled) {
-/******/ 					deferred.splice(i--, 1)
-/******/ 					result = fn();
-/******/ 				}
-/******/ 			}
-/******/ 			return result;
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -37916,9 +37907,9 @@ module.exports = webpackAsyncContext;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_App_Auth_ConfirmPassword_jsx":1,"resources_js_Pages_App_Auth_ForgotPassword_jsx":1,"resources_js_Pages_App_Auth_Login_jsx":1,"resources_js_Pages_App_Auth_Register_jsx":1,"resources_js_Pages_App_Auth_ResetPassword_jsx":1,"resources_js_Pages_App_Auth_TwoFactorChallenge_jsx":1,"resources_js_Pages_App_Auth_VerifyEmail_jsx":1,"resources_js_Pages_App_Welcome_jsx":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_Admin_Dashboard_jsx":1,"resources_js_Pages_Admin_PrivacyPolicy_jsx":1,"resources_js_Pages_Admin_Profile_DeleteUserForm_jsx":1,"resources_js_Pages_Admin_Profile_LogoutOtherBrowserSessionsForm_jsx":1,"resources_js_Pages_Admin_Profile_Show_jsx":1,"resources_js_Pages_Admin_Profile_TwoFactorAuthenticationForm_jsx":1,"resources_js_Pages_Admin_Profile_UpdatePasswordForm_jsx":1,"resources_js_Pages_Admin_Profile_UpdateProfileInformationForm_jsx":1,"resources_js_Pages_Admin_Teams_Create_jsx":1,"resources_js_Pages_Admin_Teams_CreateTeamForm_jsx":1,"resources_js_Pages_Admin_Teams_DeleteTeamForm_jsx":1,"resources_js_Pages_Admin_Teams_Show_jsx":1,"resources_js_Pages_Admin_Teams_TeamMemberManager_jsx":1,"resources_js_Pages_Admin_Teams_UpdateTeamNameForm_jsx":1,"resources_js_Pages_Admin_TermsOfService_jsx":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
-/******/ 			return undefined;
+/******/ 			return "" + chunkId + ".js";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -38019,6 +38010,78 @@ module.exports = webpackAsyncContext;
 /******/ 		__webpack_require__.p = "/";
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/css loading */
+/******/ 	(() => {
+/******/ 		var createStylesheet = (chunkId, fullhref, resolve, reject) => {
+/******/ 			var linkTag = document.createElement("link");
+/******/ 		
+/******/ 			linkTag.rel = "stylesheet";
+/******/ 			linkTag.type = "text/css";
+/******/ 			var onLinkComplete = (event) => {
+/******/ 				// avoid mem leaks.
+/******/ 				linkTag.onerror = linkTag.onload = null;
+/******/ 				if (event.type === 'load') {
+/******/ 					resolve();
+/******/ 				} else {
+/******/ 					var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 					var realHref = event && event.target && event.target.href || fullhref;
+/******/ 					var err = new Error("Loading CSS chunk " + chunkId + " failed.\n(" + realHref + ")");
+/******/ 					err.code = "CSS_CHUNK_LOAD_FAILED";
+/******/ 					err.type = errorType;
+/******/ 					err.request = realHref;
+/******/ 					linkTag.parentNode.removeChild(linkTag)
+/******/ 					reject(err);
+/******/ 				}
+/******/ 			}
+/******/ 			linkTag.onerror = linkTag.onload = onLinkComplete;
+/******/ 			linkTag.href = fullhref;
+/******/ 		
+/******/ 			document.head.appendChild(linkTag);
+/******/ 			return linkTag;
+/******/ 		};
+/******/ 		var findStylesheet = (href, fullhref) => {
+/******/ 			var existingLinkTags = document.getElementsByTagName("link");
+/******/ 			for(var i = 0; i < existingLinkTags.length; i++) {
+/******/ 				var tag = existingLinkTags[i];
+/******/ 				var dataHref = tag.getAttribute("data-href") || tag.getAttribute("href");
+/******/ 				if(tag.rel === "stylesheet" && (dataHref === href || dataHref === fullhref)) return tag;
+/******/ 			}
+/******/ 			var existingStyleTags = document.getElementsByTagName("style");
+/******/ 			for(var i = 0; i < existingStyleTags.length; i++) {
+/******/ 				var tag = existingStyleTags[i];
+/******/ 				var dataHref = tag.getAttribute("data-href");
+/******/ 				if(dataHref === href || dataHref === fullhref) return tag;
+/******/ 			}
+/******/ 		};
+/******/ 		var loadStylesheet = (chunkId) => {
+/******/ 			return new Promise((resolve, reject) => {
+/******/ 				var href = __webpack_require__.miniCssF(chunkId);
+/******/ 				var fullhref = __webpack_require__.p + href;
+/******/ 				if(findStylesheet(href, fullhref)) return resolve();
+/******/ 				createStylesheet(chunkId, fullhref, resolve, reject);
+/******/ 			});
+/******/ 		}
+/******/ 		// object to store loaded CSS chunks
+/******/ 		var installedCssChunks = {
+/******/ 			"/js/admin": 0
+/******/ 		};
+/******/ 		
+/******/ 		__webpack_require__.f.miniCss = (chunkId, promises) => {
+/******/ 			var cssChunks = {"css/app":1};
+/******/ 			if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
+/******/ 			else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
+/******/ 				promises.push(installedCssChunks[chunkId] = loadStylesheet(chunkId).then(() => {
+/******/ 					installedCssChunks[chunkId] = 0;
+/******/ 				}, (e) => {
+/******/ 					delete installedCssChunks[chunkId];
+/******/ 					throw e;
+/******/ 				}));
+/******/ 			}
+/******/ 		};
+/******/ 		
+/******/ 		// no hmr
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
 /******/ 	(() => {
 /******/ 		// no baseURI
@@ -38027,8 +38090,7 @@ module.exports = webpackAsyncContext;
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"/js/app": 0,
-/******/ 			"css/app": 0
+/******/ 			"/js/admin": 0
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.j = (chunkId, promises) => {
@@ -38078,7 +38140,7 @@ module.exports = webpackAsyncContext;
 /******/ 		
 /******/ 		// no HMR manifest
 /******/ 		
-/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		// no on chunks loaded
 /******/ 		
 /******/ 		// install a JSONP callback for chunk loading
 /******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
@@ -38100,7 +38162,7 @@ module.exports = webpackAsyncContext;
 /******/ 				}
 /******/ 				installedChunks[chunkIds[i]] = 0;
 /******/ 			}
-/******/ 			__webpack_require__.O();
+/******/ 		
 /******/ 		}
 /******/ 		
 /******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
@@ -38109,13 +38171,46 @@ module.exports = webpackAsyncContext;
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/css/app.css")))
-/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
-/******/ 	
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+(() => {
+"use strict";
+/*!*******************************!*\
+  !*** ./resources/js/admin.js ***!
+  \*******************************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var _inertiajs_progress__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/progress */ "./node_modules/@inertiajs/progress/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+
+
+
+
+(0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.createInertiaApp)({
+  id: "admin",
+  resolve: function resolve(name) {
+    return __webpack_require__("./resources/js/Pages/Admin lazy recursive ^\\.\\/.*$")("./".concat(name));
+  },
+  setup: function setup(_ref) {
+    var el = _ref.el,
+        App = _ref.App,
+        props = _ref.props;
+    (0,react_dom__WEBPACK_IMPORTED_MODULE_1__.render)( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(App, _objectSpread({}, props)), el);
+  }
+});
+_inertiajs_progress__WEBPACK_IMPORTED_MODULE_2__.InertiaProgress.init({
+  color: '#4B5563'
+});
+})();
+
 /******/ })()
 ;
