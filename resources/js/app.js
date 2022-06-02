@@ -1,14 +1,16 @@
 require ('./bootstrap')
-import { createInertiaApp } from '@inertiajs/inertia-react'
+import {App} from "@inertiajs/inertia-react";
 import {render} from "react-dom";
 import {InertiaProgress} from '@inertiajs/progress';
 
+const element = document.getElementById('app');
 
-createInertiaApp({
-    resolve: name => import(`./Pages/App/${name}`),
-    setup({ el, App, props }) {
-        render(<App {...props} />, el)
-    },
-})
+render(
+    <App
+        initialPage={JSON.parse(element.dataset.page)}
+        resolveComponent={name => import(`./Pages/${name}`).then(module => module.default)}
+    />,
+    element
+)
 
 InertiaProgress.init({color: '#4B5563'});

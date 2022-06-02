@@ -1,12 +1,12 @@
 import {usePage} from "@inertiajs/inertia-react";
 
 import AppLayout from "@/Layouts/AppLayout";
-import UpdateProfileInformationForm from "@/Pages/Admin/Profile/UpdateProfileInformationForm";
+import UpdateProfileInformationForm from "@/Pages/Profile/UpdateProfileInformationForm";
 import SectionBorder from "@/Jetstream/SectionBorder";
-import UpdatePasswordForm from "@/Pages/Admin/Profile/UpdatePasswordForm";
-import LogoutOtherBrowserSessionsForm from "@/Pages/Admin/Profile/LogoutOtherBrowserSessionsForm";
-import DeleteUserForm from "@/Pages/Admin/Profile/DeleteUserForm";
-import TwoFactorAuthenticationForm from "@/Pages/Admin/Profile/TwoFactorAuthenticationForm";
+import UpdatePasswordForm from "@/Pages/Profile/UpdatePasswordForm";
+import LogoutOtherBrowserSessionsForm from "@/Pages/Profile/LogoutOtherBrowserSessionsForm";
+import DeleteUserForm from "@/Pages/Profile/DeleteUserForm";
+import TwoFactorAuthenticationForm from "@/Pages/Profile/TwoFactorAuthenticationForm";
 
 const Show = () => {
 

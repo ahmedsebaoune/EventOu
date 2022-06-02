@@ -13,7 +13,7 @@ const Login = () => {
 
     const { data, setData, post, processing } = useForm({ email: '', password: '', remember: false });
 
-    const submit = () => post('/login')
+    const submit = () => post(route('login'))
 
     return (
         <AuthenticationCard logo={ <AuthenticationCardLogo/> }>

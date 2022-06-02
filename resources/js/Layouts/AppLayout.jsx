@@ -8,7 +8,7 @@ import DropdownLink from "@/Jetstream/DropdownLink";
 import ApplicationMark from "@/Jetstream/ApplicationMark";
 import ResponsiveNavLink from "@/Jetstream/ResponsiveNavLink";
 import {CheckCircleIcon, SelectorIcon} from "@heroicons/react/outline";
-import '../../css/app.css'
+
 
 const AppLayout = (props) => {
     const {user: authUser} = usePage().props
