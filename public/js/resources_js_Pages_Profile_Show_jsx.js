@@ -11898,7 +11898,7 @@ var SectionTitle = function SectionTitle(_ref) {
 
 /***/ "./resources/js/Layouts/AppLayout.jsx":
 /*!********************************************!*\
-  !*** ./resources/js/Layouts/AppLayout.jsx ***!
+  !*** ./resources/js/Layouts/AdminLayout.jsx ***!
   \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 

@@ -1,6 +1,6 @@
 import {usePage} from "@inertiajs/inertia-react";
 
-import AppLayout from "@/Layouts/AppLayout";
+import AppLayout from "@/Layouts/AdminLayout";
 import UpdateProfileInformationForm from "@/Pages/Profile/UpdateProfileInformationForm";
 import SectionBorder from "@/Jetstream/SectionBorder";
 import UpdatePasswordForm from "@/Pages/Profile/UpdatePasswordForm";

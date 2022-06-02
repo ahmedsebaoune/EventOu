@@ -1,4 +1,4 @@
-import AppLayout from "@/Layouts/AppLayout";
+import AppLayout from "@/Layouts/AdminLayout";
 import CreateTeamForm from "@/Pages/Teams/CreateTeamForm";
 
 const Create = () => {

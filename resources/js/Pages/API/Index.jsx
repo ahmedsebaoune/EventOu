@@ -1,4 +1,4 @@
-import AppLayout from "@/Layouts/AppLayout";
+import AppLayout from "@/Layouts/AdminLayout";
 import ApiTokenManager from "@/Pages/API/ApiTokenManager";
 
 function Index({tokens, availablePermissions, defaultPermissions}) {

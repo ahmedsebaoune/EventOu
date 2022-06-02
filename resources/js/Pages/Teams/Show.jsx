@@ -1,5 +1,5 @@
 import React from 'react';
-import AppLayout from "@/Layouts/AppLayout";
+import AppLayout from "@/Layouts/AdminLayout";
 import SectionBorder from "@/Jetstream/SectionBorder";
 import DeleteTeamForm from "@/Pages/Teams/DeleteTeamForm";
 import UpdateTeamNameForm from "@/Pages/Teams/UpdateTeamNameForm";

@@ -1,4 +1,4 @@
-import AppLayout from "@/Layouts/AppLayout";
+import AppLayout from "@/Layouts/AdminLayout";
 import JetstreamDefault from "@/Jetstream/JetstreamDefault";
 
 const Dashboard = () => {
