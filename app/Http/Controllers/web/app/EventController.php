@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\web\app;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreEventRequest;
 use App\Models\Category;
 use App\Models\Event;
 use App\Models\TemporaryFile;
@@ -37,8 +38,9 @@ class EventController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(StoreEventRequest $request)
     {
+        $validated = $request->validated();
         $folder = $request->photo_path;
         $filename = TemporaryFile::where('folder', $folder)->first()->filename;
         $temp = 'tmp/events/' . $folder . '/' . $filename;

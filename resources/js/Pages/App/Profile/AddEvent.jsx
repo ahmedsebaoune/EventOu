@@ -17,14 +17,14 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
 
 const AddEvent = () => {
 
-    function later() {
-        return new Promise(function (resolve) {
-            setTimeout(resolve, 1000);
-        });
-    }
+    // function later() {
+    //     return new Promise(function (resolve) {
+    //         setTimeout(resolve, 1000);
+    //     });
+    // }
+    let {categories,errors:validationErrors} = usePage().props
 
     const [files, setFiles] = useState([]);
-    let {categories} = usePage().props
     categories = JSON.parse(categories);
     const {data, setData, post, processing, errors} = useForm({
         name: '',
@@ -70,6 +70,10 @@ const AddEvent = () => {
                 </div>
                 {/* profile-edit-container*/}
                 <div className="profile-edit-container fl-wrap block_box">
+                    {
+                        validationErrors &&
+                            <div className="red-bg_color">{validationErrors.name}</div>
+                    }
                     <div className="custom-form">
                         <label>
                             Event Title <i className="fal fa-briefcase"/>
@@ -92,16 +96,17 @@ const AddEvent = () => {
                                     </select>
                                 </div>
                             </div>
-                            {/*<div className="col-md-6">*/}
-                            {/*    <label>*/}
-                            {/*        Keywords <i className="fal fa-key"/>*/}
-                            {/*    </label>*/}
-                            {/*    <input*/}
-                            {/*        type="text"*/}
-                            {/*        placeholder="Maximum 15 , should be separated by commas"*/}
-                            {/*        defaultValue=""*/}
-                            {/*    />*/}
-                            {/*</div>*/}
+
+                            <div className="col-md-6">
+                                <label>
+                                    Keywords <i className="fal fa-dollar-sign"/>
+                                </label>
+                                <input
+                                    type="text"
+                                    placeholder="Maximum 15 , should be separated by commas"
+                                    defaultValue=""
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
