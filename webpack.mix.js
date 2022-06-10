@@ -11,12 +11,16 @@ const mix = require('laravel-mix');
  |
  */
 
-mix .js('resources/js/app.js', 'public/js')
+mix.js('resources/js/app.js', 'public/js')
     .react()
-    // .extract(['react'])
-    .postCss('resources/css/app.css', 'public/css',
-        [require('tailwindcss')]
-    )
+    .extract(['react'])
+    // .sass('resources/scss/app.css', 'public/css')
+    .postCss('resources/css/app.css', 'public/css')
+    .copy('resources/app/assets/fonts', 'public/app/assets/fonts')
+    .copy('resources/app/assets/img', 'public/app/assets/img')
+    .copy('resources/app/assets/images', 'public/app/assets/images')
+    .copy('resources/app/assets/js', 'public/app/assets/js')
+    .copy('resources/app/assets/video', 'public/app/assets/video')
     .webpackConfig(require('./webpack.config'))
 
 if (mix.inProduction()) {

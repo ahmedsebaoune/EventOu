@@ -3,9 +3,8 @@
 @import 'tailwindcss/utilities';
  */
 
-body{
-     background-color: red;
- }
-.AppLayout{
-    background-color: red;
-}
+@import '../app/assets/css/reset.css';
+@import '../app/assets/css/plugins.css';
+@import '../app/assets/css/style.css';
+@import '../app/assets/css/color.css';
+@import '../app/assets/css/dashboard-style.css';

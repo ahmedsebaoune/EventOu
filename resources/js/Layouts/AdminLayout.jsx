@@ -11,6 +11,9 @@ import {CheckCircleIcon, SelectorIcon} from "@heroicons/react/outline";
 import '../../scss/app.scss';
 
 const AdminLayout = (props) => {
+
+
+
     const {user: authUser} = usePage().props
 
     const {canCreateTeams, managesProfilePhotos, hasApiFeatures, hasTeamFeatures} = usePage().props.jetstream
