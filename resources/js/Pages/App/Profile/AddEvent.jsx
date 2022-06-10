@@ -22,16 +22,17 @@ const AddEvent = () => {
     //         setTimeout(resolve, 1000);
     //     });
     // }
-    let {categories,errors:validationErrors} = usePage().props
+    let {categories,AHMED,errors:validationErrors} = usePage().props
 
     const [files, setFiles] = useState([]);
     categories = JSON.parse(categories);
     const {data, setData, post, processing, errors} = useForm({
         name: '',
         categorie: '',
-        photo_path: ''
+        photo_path: '',
+        entry_price:''
     })
-
+    
     const server = {
         url: "/uploads",
         headers: {
@@ -58,6 +59,8 @@ const AddEvent = () => {
         e.preventDefault()
         post("/profile/event/add", {
             preserveState: true,
+            preserveScroll:true,
+            only:[AHMED],
             forceFormData: true,
 
         })
@@ -72,7 +75,10 @@ const AddEvent = () => {
                 <div className="profile-edit-container fl-wrap block_box">
                     {
                         validationErrors &&
-                            <div className="red-bg_color">{validationErrors.name}</div>
+                            <div>
+                                <div className="red-bg_color">{validationErrors.name}</div>
+                                <div className="red-bg_color">{validationErrors.entry_price}</div>
+                            </div>
                     }
                     <div className="custom-form">
                         <label>
@@ -99,12 +105,13 @@ const AddEvent = () => {
 
                             <div className="col-md-6">
                                 <label>
-                                    Keywords <i className="fal fa-dollar-sign"/>
+                                    Entry Price <i className="fal fa-dollar-sign"/>
                                 </label>
                                 <input
                                     type="text"
-                                    placeholder="Maximum 15 , should be separated by commas"
-                                    defaultValue=""
+                                    placeholder="Price"
+                                    value={data.entry_price}
+                                    onChange={e => setData('entry_price', e.target.value)}
                                 />
                             </div>
                         </div>

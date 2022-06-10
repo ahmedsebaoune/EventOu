@@ -21204,6 +21204,7 @@ var AddEvent = function AddEvent() {
   // }
   var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.usePage)().props,
       categories = _usePage$props.categories,
+      AHMED = _usePage$props.AHMED,
       validationErrors = _usePage$props.errors;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)([]),
@@ -21216,7 +21217,8 @@ var AddEvent = function AddEvent() {
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.useForm)({
     name: '',
     categorie: '',
-    photo_path: ''
+    photo_path: '',
+    entry_price: ''
   }),
       data = _useForm.data,
       setData = _useForm.setData,
@@ -21247,6 +21249,8 @@ var AddEvent = function AddEvent() {
     e.preventDefault();
     post("/profile/event/add", {
       preserveState: true,
+      preserveScroll: true,
+      only: [AHMED],
       forceFormData: true
     });
   };
@@ -21262,9 +21266,14 @@ var AddEvent = function AddEvent() {
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
         className: "profile-edit-container fl-wrap block_box",
-        children: [validationErrors && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-          className: "red-bg_color",
-          children: validationErrors.name
+        children: [validationErrors && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            className: "red-bg_color",
+            children: validationErrors.name
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            className: "red-bg_color",
+            children: validationErrors.entry_price
+          })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
           className: "custom-form",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("label", {
@@ -21305,13 +21314,16 @@ var AddEvent = function AddEvent() {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
               className: "col-md-6",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("label", {
-                children: ["Keywords ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("i", {
+                children: ["Entry Price ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("i", {
                   className: "fal fa-dollar-sign"
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
                 type: "text",
-                placeholder: "Maximum 15 , should be separated by commas",
-                defaultValue: ""
+                placeholder: "Price",
+                value: data.entry_price,
+                onChange: function onChange(e) {
+                  return setData('entry_price', e.target.value);
+                }
               })]
             })]
           })]

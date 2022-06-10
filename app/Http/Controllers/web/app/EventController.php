@@ -8,7 +8,6 @@ use App\Models\Category;
 use App\Models\Event;
 use App\Models\TemporaryFile;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
@@ -29,10 +28,10 @@ class EventController extends Controller
 
     public function addEvent()
     {
-        $categories = Category::all();
-        return Inertia::render('App/Profile/AddEvent'
-            , [
-                'categories' => $categories->toJson()
+        return Inertia::render('App/Profile/AddEvent',
+            [
+                'AHMED'=>'SSS',
+                'categories' => fn() => Category::all()->toJson()
             ]
         );
     }
