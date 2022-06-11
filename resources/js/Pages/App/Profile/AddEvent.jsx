@@ -1,7 +1,7 @@
 import {useForm, usePage} from "@inertiajs/inertia-react";
 
 import {FilePond, registerPlugin} from 'react-filepond';
-
+import moment from "moment";
 import {useState} from 'react'
 // Import FilePond styles
 import 'filepond/dist/filepond.min.css';
@@ -10,19 +10,22 @@ import FilePondPluginImageExifOrientation from 'filepond-plugin-image-exif-orien
 import FilePondPluginImagePreview from 'filepond-plugin-image-preview'
 import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css'
 
+// import DatePicker from "react-datepicker"
+// import "react-datepicker/dist/react-datepicker.css";
+import {DatePicker, Form, Input, Select} from 'antd';
 
+const {Option} = Select;
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
 
 
 const AddEvent = () => {
-
     // function later() {
     //     return new Promise(function (resolve) {
     //         setTimeout(resolve, 1000);
     //     });
     // }
-    let {categories,AHMED,errors:validationErrors} = usePage().props
+    let {categories, AHMED, errors: validationErrors} = usePage().props
 
     const [files, setFiles] = useState([]);
     categories = JSON.parse(categories);
@@ -30,9 +33,12 @@ const AddEvent = () => {
         name: '',
         categorie: '',
         photo_path: '',
-        entry_price:''
+        entry_price: '',
+        start_date: "",
+        start_time: null,
+        days: null,
     })
-    
+
     const server = {
         url: "/uploads",
         headers: {
@@ -55,19 +61,21 @@ const AddEvent = () => {
     // }, [files])
 
 
-    const submit = (e) => {
-        e.preventDefault()
+    const submit = () => {
+        $('.form').removeClass('form')
         post("/profile/event/add", {
-            preserveState: true,
-            preserveScroll:true,
-            only:[AHMED],
+            preserveScroll: true,
             forceFormData: true,
-
         })
+    }
+    const CategoriesOptions = () => {
+        return (
+            categories.map(cat => <Option>{cat["name"]}</Option>)
+        )
     }
     return (
         <div className="col-md-9">
-            <form onSubmit={submit}>
+            <Form onFinish={submit} className="form">
                 <div className="dashboard-title   fl-wrap">
                     <h3>Add Event</h3>
                 </div>
@@ -75,31 +83,29 @@ const AddEvent = () => {
                 <div className="profile-edit-container fl-wrap block_box">
                     {
                         validationErrors &&
-                            <div>
-                                <div className="red-bg_color">{validationErrors.name}</div>
-                                <div className="red-bg_color">{validationErrors.entry_price}</div>
-                            </div>
+                        <div>
+                            <div className="red-bg_color">{validationErrors.name}</div>
+                            <div className="red-bg_color">{validationErrors.entry_price}</div>
+                            <div className="red-bg_color">{validationErrors.start_date}</div>
+                        </div>
                     }
                     <div className="custom-form">
-                        <label>
-                            Event Title <i className="fal fa-briefcase"/>
-                        </label>
-                        <input type="text" placeholder="Name of your business" value={data.name}
-                               onChange={e => setData('name', e.target.value)}/>
+                        <Form.Item label="Event Title" rules={[{required: true}]}>
+                            <Input value={data.name} onChange={(e) => setData('name', e.target.value)}
+                                   prefix={<i className="fal  fa-briefcase"/>}/>
+                        </Form.Item>
+
+
                         <div className="row">
                             <div className="col-md-6">
-                                <label>Type / Category</label>
                                 <div className="listsearch-input-item">
-                                    <select
-                                        data-placeholder="Apartments"
-                                        className="chosen-select no-search-select"
-                                        value={data.categorie} onChange={e => setData('categorie', e.target.value)}
-                                    >
-                                        <option>All Categories</option>
-                                        {
-                                            categories.map(cat => <option>{cat["name"]}</option>)
-                                        }
-                                    </select>
+                                    <Form.Item label="Type / Category" rules={[{required: true}]}>
+                                        <Select value={data.categorie}
+                                                onChange={(e) => setData('categorie', e)}
+                                                prefix={<i className="fal fa-hamburger "/>}>
+                                            {categories.map(cat => <Option value={cat["name"]}>{cat["name"]}</Option>)}
+                                        </Select>
+                                    </Form.Item>
                                 </div>
                             </div>
 
@@ -117,6 +123,47 @@ const AddEvent = () => {
                         </div>
                     </div>
                 </div>
+                <div className="profile-edit-container fl-wrap block_box">
+                    <div className="dashboard-title fl-wrap">
+                        <h3>Timing</h3>
+                    </div>
+                    <div className="col-md-4">
+                        <DatePicker
+                            value={moment(data.start_date).isValid() ? moment(data.start_date) : data.start_date}
+                            onChange={(date, dateString) => setData('start_date', dateString)}/>
+                    </div>
+                    {/*<div className="col-md-4">*/}
+                    {/*    <label>Date Debut</label>*/}
+                    {/*    <DatePicker onSelect={moment(data.start_date, "DD-MM-YYYY").toDate()}*/}
+                    {/*                onChange={(date) => setData("start_date", moment(date).format("DD-MM-YYYY"))}*/}
+                    {/*                customInput={*/}
+                    {/*                    <div className="listsearch-input-item clact date-container">*/}
+                    {/*                        <span className="iconn-dec"><i className="fal fa-calendar"/></span>*/}
+
+                    {/*                        <input type="text" placeholder="Event Date" value={data.start_date}/>*/}
+                    {/*                        <span className="clear-singleinput"><i className="fal fa-times"*/}
+                    {/*                                                               onClick={() => setData("start_date", "")}/></span>*/}
+                    {/*                    </div>*/}
+                    {/*                }*/}
+                    {/*    />*/}
+                    {/*</div>*/}
+                    {/*<div className="col-md-4">*/}
+                    {/*    <label>Ouverture</label>*/}
+                    {/*    <DatePicker onSelect={moment(data.start_time, "DD-MM-YYYY").toDate()}*/}
+                    {/*                onChange={(date) => setData("start_time", moment(date).format("DD-MM-YYYY"))}*/}
+                    {/*                customInput={*/}
+                    {/*                    <div className="listsearch-input-item clact date-container">*/}
+                    {/*                        <span className="iconn-dec"><i className="fal fa-calendar"/></span>*/}
+
+                    {/*                        <input type="text" placeholder="Event Date" value={data.start_time}/>*/}
+                    {/*                        <span className="clear-singleinput"><i className="fal fa-times"*/}
+                    {/*                                                               onClick={() => setData("start_time", "")}/></span>*/}
+                    {/*                    </div>*/}
+                    {/*                }*/}
+                    {/*    />*/}
+                    {/*</div>*/}
+                </div>
+
                 {/*/!* profile-edit-container end*!/*/}
                 {/*<div className="dashboard-title  dt-inbox fl-wrap">*/}
                 {/*    <h3>Location / Contacts</h3>*/}
@@ -604,14 +651,14 @@ const AddEvent = () => {
 
                 <button onClick={(e) => {
                     e.preventDefault()
-                    console.log(data.photo_path)
+                    console.log(data.start_date)
                 }}>click
                 </button>
                 <button className="btn color2-bg  float-btn" disabled={processing}>
                     Send Listing
                     <i className="fal fa-paper-plane"/>
                 </button>
-            </form>
+            </Form>
         </div>
 
     )

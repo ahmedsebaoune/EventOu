@@ -27,8 +27,8 @@ class StoreEventRequest extends FormRequest
             //
             'name' => 'required',
             'entry_price' => 'required|numeric',
-//            'start_date' => 'required|date',
-//            'start_time' => 'required|date',
+            'start_date' => 'required|date',
+            'start_time' => 'required|date',
 //            'end_time' => 'required|date',
 //            'days' => 'required|date',
 //            'photo_path' => 'required',

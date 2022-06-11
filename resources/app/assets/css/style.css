@@ -1917,162 +1917,162 @@ section.gray-section .section-separator {
 	width:100%;
 	position:relative;
 }
-.custom-form  textarea , .custom-form input[type="text"] , .custom-form  input[type=email] , .custom-form  input[type=password] , .custom-form  input[type=button] , .listsearch-input-item input[type="text"]{
-    float: left;
-    border: 1px solid #e5e7f2;
-    background: #f9f9f9;
-    width: 100%;
-    padding: 15px 20px 15px 45px;
-    border-radius: 4px;
-	color: #7d93b2;
-	font-size:12px;
-	-webkit-appearance: none;
-	outline:none;
-	overflow:hidden;
-	z-index:1;
-}
-.custom-form.dark-form  textarea , .custom-form.dark-form  input[type="text"]  , .custom-form.dark-form  input[type=email]  , .custom-form.dark-form input[type=password] , .custom-form.dark-form input[type=button] {
-	border:none;
-    background:rgba(255,255,255,0.08);
-}
-.custom-form  textarea::-webkit-input-placeholder , .custom-form  input[type="text"]::-webkit-input-placeholder  , .listsearch-input-item input[type="text"]::-webkit-input-placeholder  {
-	color: #7d93b2;
-	font-weight: 500;
-	font-size: 12px;
- 	font-family: 'Roboto' ;
-}
-.custom-form  textarea:focus , .custom-form input[type="text"]:focus  , .custom-form  input[type=email]:focus  , .custom-form  input[type=password]:focus , .listsearch-input-item input[type="text"]:focus  {
-	background:#fff;
-	box-shadow: 0px 10px 14px 0px rgba(12, 0, 46, 0.06);
-}
-.custom-form .nice-select input {
-	padding-left:20px;
-}
-.custom-form  textarea{
-	height: 200px;
-    resize: none;
-    padding: 25px 20px;
-	-webkit-appearance: none;
-}
-.custom-form  input  {
-	margin-bottom:20px;
-}
-.filter-tags input , .custom-form  .filter-tags input {
-	float:left;
-	position:relative;
-	border: 1px solid #ccc;
-    cursor: pointer;
-    padding: 0;
-    width: 20px;
-    height: 20px;
-    position: relative;
-	border-radius:2px;
-	color:#fff;
-	background:#fff;
-	-webkit-appearance: none;
-}
-.custom-form.dark-form  .filter-tags input {
-	border-color:transparent;
-	background:rgba(255,255,255,0.21);
-}
-.filter-tags input:checked:after , .custom-form  .filter-tags input:checked:after  {
-	font-family: Font Awesome\ 5 Pro;
-	content: "\f00c";
-	font-size: 12px;
-	position: absolute;
-	top:2px;
-	left: 3px;
-	z-index:20;
-}
-.filter-tags label , .custom-form  .filter-tags label  {
-	float:left;
-	padding:0 10px;
-	position:relative;
-	top:4px;
-	color:#888DA0;
-	font-weight:600;
-	width:auto;
-	font-size:11px;
-}
-.custom-form.dark-form  .filter-tags label {
-	color:#fff;
-}
-.custom-form label {
-	float:left;
-	position:relative;
-	width:100%;
-	text-align:left;
-	font-weight:500;
-	color:#666;
-    color: #878C9F;
-    font-size: 13px;
-    font-weight: 500;
-}
-.main-register .custom-form label {
-	padding-bottom:12px;
-}
-.custom-form.dark-form  label {
-	color:rgba(255,255,255,0.71);
-}
-.custom-form label i {
-	padding-right:12px;
-	font-size:14px;
-	position:absolute;
-	top:16px;
-	left:16px;
-}
-.vis-label {
-	margin-bottom:10px;
-	font-size: 12px;
-}
-.custom-form label.vis-label i {
-	top:44px;
-}
-.custom-form button {
-	outline:none;
-	border:none;
-	cursor:pointer;
-	-webkit-appearance: none;
-	margin-top:20px;
-}
-.custom-form  input[type=number]::-webkit-inner-spin-button, .custom-form input[type=number]::-webkit-outer-spin-button{
-  -webkit-appearance: none;
-  margin: 0;
-}
-.custom-form  input[type=number]{
-  -moz-appearance: textfield;
-}
-.custom-form .quantity span {
-	float:left;
-	position:relative;
-	top:16px;
-	padding-left:14px;
-    color: #7d93b2;
-}
-.custom-form .quantity span i {
-	padding-right:10px;
-	font-size:14px;
-}
-.custom-form .quantity input.minus , .custom-form .quantity input.plus , .custom-form .quantity input.qty {
-	width:50px;
-	height:50px;
-	border-radius:0;
-	text-align:center;
-	padding:0;
-	cursor:pointer;
-	-webkit-appearance: none;
-}
-.custom-form .quantity input.plus {
-	border-top-right-radius:6px;
-	border-bottom-right-radius:6px;
-}
-.custom-form .quantity input.minus {
-	border-top-left-radius:6px;
-	border-bottom-left-radius:6px;
-}
-.quantity-item{
-	float:right;
-}
+/*.custom-form  textarea , .custom-form input[type="text"] , .custom-form  input[type=email] , .custom-form  input[type=password] , .custom-form  input[type=button] , .listsearch-input-item input[type="text"]{*/
+/*    float: left;*/
+/*    border: 1px solid #e5e7f2;*/
+/*    background: #f9f9f9;*/
+/*    width: 100%;*/
+/*    padding: 15px 20px 15px 45px;*/
+/*    border-radius: 4px;*/
+/*	color: #7d93b2;*/
+/*	font-size:12px;*/
+/*	-webkit-appearance: none;*/
+/*	outline:none;*/
+/*	overflow:hidden;*/
+/*	z-index:1;*/
+/*}*/
+/*.custom-form.dark-form  textarea , .custom-form.dark-form  input[type="text"]  , .custom-form.dark-form  input[type=email]  , .custom-form.dark-form input[type=password] , .custom-form.dark-form input[type=button] {*/
+/*	border:none;*/
+/*    background:rgba(255,255,255,0.08);*/
+/*}*/
+/*.custom-form  textarea::-webkit-input-placeholder , .custom-form  input[type="text"]::-webkit-input-placeholder  , .listsearch-input-item input[type="text"]::-webkit-input-placeholder  {*/
+/*	color: #7d93b2;*/
+/*	font-weight: 500;*/
+/*	font-size: 12px;*/
+/* 	font-family: 'Roboto' ;*/
+/*}*/
+/*.custom-form  textarea:focus , .custom-form input[type="text"]:focus  , .custom-form  input[type=email]:focus  , .custom-form  input[type=password]:focus , .listsearch-input-item input[type="text"]:focus  {*/
+/*	background:#fff;*/
+/*	box-shadow: 0px 10px 14px 0px rgba(12, 0, 46, 0.06);*/
+/*}*/
+/*.custom-form .nice-select input {*/
+/*	padding-left:20px;*/
+/*}*/
+/*.custom-form  textarea{*/
+/*	height: 200px;*/
+/*    resize: none;*/
+/*    padding: 25px 20px;*/
+/*	-webkit-appearance: none;*/
+/*}*/
+/*.custom-form  input  {*/
+/*	margin-bottom:20px;*/
+/*}*/
+/*.filter-tags input , .custom-form  .filter-tags input {*/
+/*	float:left;*/
+/*	position:relative;*/
+/*	border: 1px solid #ccc;*/
+/*    cursor: pointer;*/
+/*    padding: 0;*/
+/*    width: 20px;*/
+/*    height: 20px;*/
+/*    position: relative;*/
+/*	border-radius:2px;*/
+/*	color:#fff;*/
+/*	background:#fff;*/
+/*	-webkit-appearance: none;*/
+/*}*/
+/*.custom-form.dark-form  .filter-tags input {*/
+/*	border-color:transparent;*/
+/*	background:rgba(255,255,255,0.21);*/
+/*}*/
+/*.filter-tags input:checked:after , .custom-form  .filter-tags input:checked:after  {*/
+/*	font-family: Font Awesome\ 5 Pro;*/
+/*	content: "\f00c";*/
+/*	font-size: 12px;*/
+/*	position: absolute;*/
+/*	top:2px;*/
+/*	left: 3px;*/
+/*	z-index:20;*/
+/*}*/
+/*.filter-tags label , .custom-form  .filter-tags label  {*/
+/*	float:left;*/
+/*	padding:0 10px;*/
+/*	position:relative;*/
+/*	top:4px;*/
+/*	color:#888DA0;*/
+/*	font-weight:600;*/
+/*	width:auto;*/
+/*	font-size:11px;*/
+/*}*/
+/*.custom-form.dark-form  .filter-tags label {*/
+/*	color:#fff;*/
+/*}*/
+/*.custom-form label {*/
+/*	float:left;*/
+/*	position:relative;*/
+/*	width:100%;*/
+/*	text-align:left;*/
+/*	font-weight:500;*/
+/*	color:#666;*/
+/*    color: #878C9F;*/
+/*    font-size: 13px;*/
+/*    font-weight: 500;*/
+/*}*/
+/*.main-register .custom-form label {*/
+/*	padding-bottom:12px;*/
+/*}*/
+/*.custom-form.dark-form  label {*/
+/*	color:rgba(255,255,255,0.71);*/
+/*}*/
+/*.custom-form label i {*/
+/*	padding-right:12px;*/
+/*	font-size:14px;*/
+/*	position:absolute;*/
+/*	top:16px;*/
+/*	left:16px;*/
+/*}*/
+/*.vis-label {*/
+/*	margin-bottom:10px;*/
+/*	font-size: 12px;*/
+/*}*/
+/*.custom-form label.vis-label i {*/
+/*	top:44px;*/
+/*}*/
+/*.custom-form button {*/
+/*	outline:none;*/
+/*	border:none;*/
+/*	cursor:pointer;*/
+/*	-webkit-appearance: none;*/
+/*	margin-top:20px;*/
+/*}*/
+/*.custom-form  input[type=number]::-webkit-inner-spin-button, .custom-form input[type=number]::-webkit-outer-spin-button{*/
+/*  -webkit-appearance: none;*/
+/*  margin: 0;*/
+/*}*/
+/*.custom-form  input[type=number]{*/
+/*  -moz-appearance: textfield;*/
+/*}*/
+/*.custom-form .quantity span {*/
+/*	float:left;*/
+/*	position:relative;*/
+/*	top:16px;*/
+/*	padding-left:14px;*/
+/*    color: #7d93b2;*/
+/*}*/
+/*.custom-form .quantity span i {*/
+/*	padding-right:10px;*/
+/*	font-size:14px;*/
+/*}*/
+/*.custom-form .quantity input.minus , .custom-form .quantity input.plus , .custom-form .quantity input.qty {*/
+/*	width:50px;*/
+/*	height:50px;*/
+/*	border-radius:0;*/
+/*	text-align:center;*/
+/*	padding:0;*/
+/*	cursor:pointer;*/
+/*	-webkit-appearance: none;*/
+/*}*/
+/*.custom-form .quantity input.plus {*/
+/*	border-top-right-radius:6px;*/
+/*	border-bottom-right-radius:6px;*/
+/*}*/
+/*.custom-form .quantity input.minus {*/
+/*	border-top-left-radius:6px;*/
+/*	border-bottom-left-radius:6px;*/
+/*}*/
+/*.quantity-item{*/
+/*	float:right;*/
+/*}*/
 .custom-form .quantity input.qty {
 	color:#fff;
 	width:50px;

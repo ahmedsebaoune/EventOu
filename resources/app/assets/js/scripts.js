@@ -969,7 +969,7 @@ function initTowhub() {
     $(".url_btn").on("click", function (e) {
         e.preventDefault();
     });
-    $('.chosen-select').niceSelect();
+    $('.form').find('.chosen-select').niceSelect();
 // rangeslider -----------------
     $(".range-slider").ionRangeSlider({
         type: "double",
