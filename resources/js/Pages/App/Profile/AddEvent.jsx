@@ -75,7 +75,8 @@ const AddEvent = () => {
     }
     return (
         <div className="col-md-9">
-            <Form onFinish={submit} className="form">
+            <Form onFinish={submit} className="form" labelCol={{span: 3}}
+                  wrapperCol={{span: 21}}>
                 <div className="dashboard-title   fl-wrap">
                     <h3>Add Event</h3>
                 </div>
@@ -90,12 +91,22 @@ const AddEvent = () => {
                         </div>
                     }
                     <div className="custom-form">
-                        <Form.Item label="Event Title" rules={[{required: true}]}>
-                            <Input value={data.name} onChange={(e) => setData('name', e.target.value)}
+                        <Form.Item     label="Event Title" rules={[{required: true}]}>
+                            <Input span={4} value={data.name} onChange={(e) => setData('name', e.target.value)}
                                    prefix={<i className="fal  fa-briefcase"/>}/>
                         </Form.Item>
+                        <Form.Item  labelCol={{span: 3}}  wrapperCol={{span: 8}}      label="Type / Category" rules={[{required: true}]}>
+                            <Select value={data.categorie}
+                                    onChange={(e) => setData('categorie', e)}
+                                    prefix={<i className="fal fa-hamburger "/>}>
+                                {categories.map(cat => <Option value={cat["name"]}>{cat["name"]}</Option>)}
+                            </Select>
+                        </Form.Item>
+                        <Form.Item labelCol={{span: 3}}  wrapperCol={{span: 8}}    label="price" rules={[{required: true}]}>
+                            <Input value={data.name} onChange={(e) => setData('name', e.target.value)}
+                                   prefix={<i className="fal fa-dollar-sign "/>} suffix="DA"/>
 
-
+                        </Form.Item>
                         <div className="row">
                             <div className="col-md-6">
                                 <div className="listsearch-input-item">
@@ -110,15 +121,11 @@ const AddEvent = () => {
                             </div>
 
                             <div className="col-md-6">
-                                <label>
-                                    Entry Price <i className="fal fa-dollar-sign"/>
-                                </label>
-                                <input
-                                    type="text"
-                                    placeholder="Price"
-                                    value={data.entry_price}
-                                    onChange={e => setData('entry_price', e.target.value)}
-                                />
+                                <Form.Item label="Event Title" rules={[{required: true}]}>
+                                    <Input value={data.name} onChange={(e) => setData('name', e.target.value)}
+                                           prefix={<i className="fal fa-dollar-sign "/>} suffix="DA"/>
+
+                                </Form.Item>
                             </div>
                         </div>
                     </div>
