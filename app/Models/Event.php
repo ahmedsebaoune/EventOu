@@ -19,8 +19,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property float|null $entry_price
  * @property Carbon|null $start_date
  * @property Carbon|null $start_time
- * @property Carbon|null $end_time
- * @property int|null $days
+ * @property Carbon|null $end_date
  * @property string|null $photo_path
  * @property string|null $thumbnail
  * @property int|null $hot
@@ -28,6 +27,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property int|null $user_id
  * @property int|null $category_id
  * @property int|null $commune_id
+ * @property float $long
+ * @property float $lat
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * 
@@ -49,18 +50,19 @@ class Event extends Model
 
 	protected $casts = [
 		'entry_price' => 'float',
-		'days' => 'int',
 		'hot' => 'int',
 		'host_id' => 'int',
 		'user_id' => 'int',
 		'category_id' => 'int',
-		'commune_id' => 'int'
+		'commune_id' => 'int',
+		'long' => 'float',
+		'lat' => 'float'
 	];
 
 	protected $dates = [
 		'start_date',
 		'start_time',
-		'end_time'
+		'end_date'
 	];
 
 	protected $fillable = [
@@ -69,15 +71,16 @@ class Event extends Model
 		'entry_price',
 		'start_date',
 		'start_time',
-		'end_time',
-		'days',
+		'end_date',
 		'photo_path',
 		'thumbnail',
 		'hot',
 		'host_id',
 		'user_id',
 		'category_id',
-		'commune_id'
+		'commune_id',
+		'long',
+		'lat'
 	];
 
 	public function category()

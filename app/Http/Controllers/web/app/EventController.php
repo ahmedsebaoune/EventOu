@@ -5,6 +5,7 @@ namespace App\Http\Controllers\web\app;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreEventRequest;
 use App\Models\Category;
+use App\Models\City;
 use App\Models\Event;
 use App\Models\TemporaryFile;
 use Carbon\Carbon;
@@ -31,7 +32,8 @@ class EventController extends Controller
         return Inertia::render('App/Profile/AddEvent',
             [
                 'AHMED'=>'SSS',
-                'categories' => fn() => Category::all()->toJson()
+                'categories' => fn() => Category::all()->toJson(),
+                'cities' => fn() => City::all()->toJson(),
             ]
         );
     }

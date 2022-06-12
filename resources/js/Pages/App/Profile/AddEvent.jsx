@@ -1,8 +1,7 @@
-import { useForm, usePage } from "@inertiajs/inertia-react";
-
-import { FilePond, registerPlugin } from "react-filepond";
+import {useForm, usePage} from "@inertiajs/inertia-react";
+import {FilePond, registerPlugin} from "react-filepond";
 import moment from "moment";
-import { useState } from "react";
+import {useState} from "react";
 // Import FilePond styles
 import "filepond/dist/filepond.min.css";
 
@@ -12,19 +11,12 @@ import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
 
 // import DatePicker from "react-datepicker"
 // import "react-datepicker/dist/react-datepicker.css";
-import {
-    Col,
-    DatePicker,
-    Form,
-    Input,
-    InputNumber,
-    Row,
-    Select,
-    TimePicker,
-} from "antd";
+import {Col, DatePicker, Form, Input, InputNumber, Row, Select, TimePicker,} from "antd";
 
-const { RangePicker } = DatePicker;
-const { Option } = Select;
+const axios = require("axios").default;
+
+const {RangePicker} = DatePicker;
+const {Option} = Select;
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
@@ -34,11 +26,12 @@ const AddEvent = () => {
     //         setTimeout(resolve, 1000);
     //     });
     // }
-    let { categories, AHMED, errors: validationErrors } = usePage().props;
-
+    let {categories, cities, AHMED, errors: validationErrors} = usePage().props;
+    const [communes, setCommunes] = useState(['']);
     const [files, setFiles] = useState([]);
     categories = JSON.parse(categories);
-    const { data, setData, post, processing, errors } = useForm({
+    cities = JSON.parse(cities)
+    const {data, setData, post, processing, errors} = useForm({
         name: "",
         categorie: "",
         photo_path: "",
@@ -47,6 +40,8 @@ const AddEvent = () => {
         end_date: "",
         start_time: null,
         days: null,
+        city: "",
+        commune: ''
     });
 
     const server = {
@@ -58,6 +53,25 @@ const AddEvent = () => {
         },
     };
 
+    const changeCommunes = (city) => {
+//         const instance = axios.create({
+// // .. where we make our configurations
+//             baseURL: 'http://127.0.0.1:8000/'
+//         });
+        axios.defaults.baseURL = process.env.API_BASE_URL;
+        console.log(process.env.API_BASE_URL)
+        axios.get(
+            `sss`
+        )
+            .then(function (response) {
+                setCommunes(response.data)
+                console.log(response);
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+    }
     // const firstRenderRef = useRef(true)
     // useEffect(async () => {
     //     if (firstRenderRef.current) {
@@ -87,8 +101,8 @@ const AddEvent = () => {
             <Form
                 onFinish={submit}
                 className="form"
-                labelCol={{ span: 3 }}
-                wrapperCol={{ span: 21 }}
+                labelCol={{span: 3}}
+                wrapperCol={{span: 21}}
             >
                 <div className="dashboard-title   fl-wrap">
                     <h3>Add Event</h3>
@@ -120,14 +134,14 @@ const AddEvent = () => {
                                 onChange={(e) =>
                                     setData("name", e.target.value)
                                 }
-                                prefix={<i className="fal  fa-briefcase" />}
+                                prefix={<i className="fal  fa-briefcase"/>}
                             />
                         </Form.Item>
                         <Row>
                             <Col span="12">
                                 <Form.Item
-                                    labelCol={{ span: 6 }}
-                                    wrapperCol={{ span: 18 }}
+                                    labelCol={{span: 6}}
+                                    wrapperCol={{span: 18}}
                                     label="Type / Category"
                                     validateStatus={
                                         validationErrors.categorie && "error"
@@ -140,7 +154,7 @@ const AddEvent = () => {
                                             setData("categorie", e)
                                         }
                                         prefix={
-                                            <i className="fal fa-hamburger " />
+                                            <i className="fal fa-hamburger "/>
                                         }
                                     >
                                         {categories.map((cat) => (
@@ -153,16 +167,16 @@ const AddEvent = () => {
                             </Col>
                             <Col span="12">
                                 <Form.Item
-                                    labelCol={{ span: 6 }}
-                                    wrapperCol={{ span: 18 }}
-                                    label="price"
+                                    labelCol={{span: 6}}
+                                    wrapperCol={{span: 18}}
+                                    label="prix"
                                     validateStatus={
                                         validationErrors.entry_price && "error"
                                     }
                                     help={validationErrors.entry_price}
                                 >
                                     <InputNumber
-                                        style={{ width: "100%" }}
+                                        style={{width: "100%"}}
                                         value={data.entry_price}
                                         onChange={(value) =>
                                             setData("entry_price", value)
@@ -181,8 +195,8 @@ const AddEvent = () => {
                         <Row>
                             <Col span={12}>
                                 <Form.Item
-                                    labelCol={{ span: 6 }}
-                                    wrapperCol={{ span: 24 }}
+                                    labelCol={{span: 6}}
+                                    wrapperCol={{span: 24}}
                                     label="Dates"
                                     validateStatus={
                                         validationErrors.start_date ||
@@ -194,7 +208,7 @@ const AddEvent = () => {
                                         (validationErrors.start_date ||
                                             validationErrors.end_date) &&
                                         validationErrors.start_date +
-                                            validationErrors.end_date
+                                        validationErrors.end_date
                                     }
                                 >
                                     <RangePicker
@@ -219,14 +233,14 @@ const AddEvent = () => {
 
                                             console.log(date);
                                         }}
-                                        style={{ width: "100%" }}
+                                        style={{width: "100%"}}
                                     />
                                 </Form.Item>
                             </Col>
                             <Col span={12}>
                                 <Form.Item
-                                    labelCol={{ span: 10 }}
-                                    wrapperCol={{ span: 14 }}
+                                    labelCol={{span: 10}}
+                                    wrapperCol={{span: 14}}
                                     label="Heur d'ouverture"
                                     validateStatus={
                                         validationErrors.start_time && "error"
@@ -248,7 +262,7 @@ const AddEvent = () => {
                                                 )
                                             );
                                         }}
-                                        style={{ width: "100%" }}
+                                        style={{width: "100%"}}
                                     />
                                 </Form.Item>
                             </Col>
@@ -285,6 +299,72 @@ const AddEvent = () => {
                     {/*    />*/}
                     {/*</div>*/}
                 </div>
+                <div className="profile-edit-container fl-wrap block_box">
+                    <div className="dashboard-title fl-wrap">
+                        <h3>Localisation</h3>
+                    </div>
+                    <div className="custom-form">
+                        <Row>
+                            <Col span={12}>
+                                <Form.Item
+                                    labelCol={{span: 6}}
+                                    wrapperCol={{span: 18}}
+                                    label="Wilaya"
+                                    validateStatus={
+                                        validationErrors.city && "error"
+                                    }
+                                    help={validationErrors.city}
+                                >
+                                    <Select
+                                        value={data.city}
+                                        onChange={(value) => {
+                                            setData("city", value)
+                                            changeCommunes(value)
+
+                                        }}
+                                        prefix={
+                                            <i className="fal fa-hamburger "/>
+                                        }
+                                    >
+                                        {cities.map((city) => (
+                                            <Option value={city["code"]}>
+                                                {city["name"]}
+                                            </Option>
+                                        ))}
+                                    </Select>
+                                </Form.Item>
+                            </Col>
+                            <Col span={12}>
+                                <Form.Item
+                                    labelCol={{span: 6}}
+                                    wrapperCol={{span: 18}}
+                                    label="Commune"
+                                    validateStatus={
+                                        validationErrors.commune && "error"
+                                    }
+                                    help={validationErrors.commune}
+                                >
+                                    <Select
+                                        value={data.commune}
+                                        onChange={(e) => {
+                                            setData("commune", e)
+                                        }}
+                                        prefix={
+                                            <i className="fal fa-hamburger "/>
+                                        }
+                                    >
+                                        {communes.map((cm) => (
+                                            <Option value={cm["id"]}>
+                                                {cm["name"]}
+                                            </Option>
+                                        ))}
+                                    </Select>
+                                </Form.Item>
+                            </Col>
+
+                        </Row>
+                    </div>
+                </div>
 
                 <FilePond
                     files={files}
@@ -320,7 +400,7 @@ const AddEvent = () => {
                     disabled={processing}
                 >
                     Send Listing
-                    <i className="fal fa-paper-plane" />
+                    <i className="fal fa-paper-plane"/>
                 </button>
             </Form>
         </div>

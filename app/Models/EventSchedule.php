@@ -11,13 +11,13 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class EventSchedule
- * 
+ *
  * @property int $day
  * @property int $event_id
  * @property string|null $description
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property Event $event
  *
  * @package App\Models
@@ -33,7 +33,9 @@ class EventSchedule extends Model
 	];
 
 	protected $fillable = [
-		'description'
+		'description',
+        'day' => 'int',
+		'event_id' => 'int'
 	];
 
 	public function event()

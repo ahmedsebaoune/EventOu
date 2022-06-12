@@ -28,15 +28,15 @@ class StoreEventRequest extends FormRequest
             'name' => 'required',
             'entry_price' => 'required|numeric',
             'start_date' => 'required|date',
-                        'end_date' => 'required|date',
-
+            'end_date' => 'required|date',
             'start_time' => 'required|date',
-            'days' => 'required|numeric',
             'photo_path' => 'required',
 //            'host_id' => 'required',
 //            'user_id' => 'required',
-           'categorie' => 'required',
-//            'commune_id' => 'required'
+            'categorie' => 'required',
+            'commune_id' => 'required',
+            'long',
+            'lat',
 
         ];
     }

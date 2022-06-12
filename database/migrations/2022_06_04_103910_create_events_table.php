@@ -20,8 +20,7 @@ class CreateEventsTable extends Migration
             $table->decimal('entry_price', $precision = 8, $scale = 1)->nullable();
             $table->date('start_date')->nullable();
             $table->time('start_time', $precision = 0)->nullable();
-            $table->time('end_time', $precision = 0)->nullable();
-            $table->tinyInteger('days')->nullable();
+            $table->date('end_date')->nullable();
             $table->string('photo_path', 2048)->nullable();
             $table->string('thumbnail', 2048)->nullable();
             $table->bigInteger('hot')->default(0)->nullable();
@@ -33,6 +32,8 @@ class CreateEventsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->foreign('commune_id')->references('id')->on('communes');
+            $table->decimal('long', 10, 7);
+            $table->decimal('lat', 10, 7);
             $table->timestamps();
         });
     }
