@@ -34,7 +34,7 @@ class StoreEventRequest extends FormRequest
 //            'host_id' => 'required',
 //            'user_id' => 'required',
             'categorie' => 'required',
-            'commune_id' => 'required',
+            'commune' => 'required',
             'long',
             'lat',
 

@@ -26,7 +26,7 @@ const AddEvent = () => {
     //         setTimeout(resolve, 1000);
     //     });
     // }
-    let {categories, cities, AHMED, errors: validationErrors} = usePage().props;
+    let {categories, cities, AHMED, errors: validationErrors,app_url} = usePage().props;
     const [communes, setCommunes] = useState(['']);
     const [files, setFiles] = useState([]);
     categories = JSON.parse(categories);
@@ -54,14 +54,10 @@ const AddEvent = () => {
     };
 
     const changeCommunes = (city) => {
-//         const instance = axios.create({
-// // .. where we make our configurations
-//             baseURL: 'http://127.0.0.1:8000/'
-//         });
-        axios.defaults.baseURL = process.env.API_BASE_URL;
-        console.log(process.env.API_BASE_URL)
+        axios.defaults.baseURL = app_url;
+        console.log(app_url)
         axios.get(
-            `sss`
+            `${city}/communes`
         )
             .then(function (response) {
                 setCommunes(response.data)
@@ -318,7 +314,7 @@ const AddEvent = () => {
                                     <Select
                                         value={data.city}
                                         onChange={(value) => {
-                                            setData("city", value)
+                                            setData(data => ( {...data,city:value,commune: ""}))
                                             changeCommunes(value)
 
                                         }}

@@ -40,6 +40,7 @@ class HandleInertiaRequests extends Middleware
     {
         return array_merge(parent::share($request), [
             'authed' => Auth::user() ?? false,
+            'app_url' => env('API_BASE_URL')
 
         ]);
     }
