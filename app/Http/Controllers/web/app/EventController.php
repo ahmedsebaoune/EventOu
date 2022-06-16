@@ -34,6 +34,7 @@ class EventController extends Controller
                 'AHMED'=>'SSS',
                 'categories' => fn() => Category::all()->toJson(),
                 'cities' => fn() => City::all()->toJson(),
+                'testEvents' => fn() => Event::all()->toJson(),
             ]
         );
     }

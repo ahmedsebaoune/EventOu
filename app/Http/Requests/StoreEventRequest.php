@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+use Illuminate\Support\Collection;
 class StoreEventRequest extends FormRequest
 {
     /**
@@ -13,7 +14,9 @@ class StoreEventRequest extends FormRequest
      */
     public function authorize()
     {
+        dd($this->input('marker'));
         return true;
+
     }
 
     /**
@@ -31,6 +34,7 @@ class StoreEventRequest extends FormRequest
             'end_date' => 'required|date',
             'start_time' => 'required|date',
             'photo_path' => 'required',
+            'days_desc' => '',
 //            'host_id' => 'required',
 //            'user_id' => 'required',
             'categorie' => 'required',
